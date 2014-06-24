@@ -1,6 +1,8 @@
 var app = angular.module('blog', [
 	'ui.router',
-	'blog.controllers.home'
+	'blog.controllers.home',
+	'blog.controllers.loginForm',
+	'blog.controllers.signupForm'
 	]);
 
 app.config([
@@ -19,6 +21,14 @@ app.config([
 			url: '/list',
 			templateUrl: 'views/home/list.html',
 			controller: 'HomeListCtrl'
+		})
+		.state('login', {
+			url: '/login',
+			templateUrl: 'views/auth/login.html'
+		})
+		.state('login.signup', {
+			url: '/signup',
+			templateUrl: 'views/auth/signup.html'
 		})
 		.state('about', {
 			url: '/about',
